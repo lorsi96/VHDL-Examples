@@ -1,0 +1,7 @@
+v 4
+file . "../src/full_adder_tb.vhd" "91c2c5764eabc93d353e89e2d467eb9d2ae17961" "20210826230338.136":
+  entity full_adder_tb at 1( 0) + 0 on 13;
+  architecture full_adder_tb_arch of full_adder_tb at 7( 74) + 0 on 14;
+file . "../src/full_adder.vhd" "bf53041db1037b7e5bff291627ed89d588ad0bff" "20210826230338.135":
+  entity full_adder at 1( 0) + 0 on 11;
+  architecture full_adder_arch of full_adder at 14( 228) + 0 on 12;

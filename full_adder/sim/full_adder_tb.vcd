@@ -1,0 +1,56 @@
+$date
+  Thu Aug 26 20:03:38 2021
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module full_adder_tb $end
+$var reg 1 ! a_tb $end
+$var reg 1 " b_tb $end
+$var reg 1 # ci_tb $end
+$var reg 1 $ s_tb $end
+$var reg 1 % co_tb $end
+$scope module dut $end
+$var reg 1 & ci_i $end
+$var reg 1 ' a_i $end
+$var reg 1 ( b_i $end
+$var reg 1 ) s_o $end
+$var reg 1 * co_o $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+0!
+0"
+0#
+0$
+0%
+0&
+0'
+0(
+0)
+0*
+#150000000
+1#
+1$
+1&
+1)
+#300000000
+1"
+0$
+1%
+1(
+0)
+1*
+#600000000
+1!
+1$
+1'
+1)
