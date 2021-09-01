@@ -36,17 +36,23 @@ end;'''
 
 STOP_TIME = 1000  # Nanoseconds.
 
+def get_deps(name):
+    with open(f'./{name}/{name}.deps') as f:
+        return ' '.join(['../../{0}/src/{0}.vhd'.format(l.strip()) for l in f.readlines()])
+
+
 def get_create_command(name):
-    return f'mkdir {name}; cd {name} && mkdir src && mkdir sim && mkdir synth && touch ./src/{name}.vhd && touch ./src/{name}_tb.vhd'
+    return f'mkdir {name}; cd {name} && mkdir src && mkdir sim && mkdir synth && touch ./src/{name}.vhd && touch ./src/{name}_tb.vhd && touch {name}.deps'
 
 def get_sim_command(name):
+    deps = get_deps(name)
     sim_path = os.path.join(name, 'sim')
     vhd_path = os.path.join('..', 'src', name + '.vhd')
     vhd_tb_path = os.path.join('..', 'src', name + '_tb.vhd')
     cmds = [
         f'cd {sim_path}',
-        f'ghdl -a {vhd_path} {vhd_tb_path}',
-        f'ghdl -s {vhd_path} {vhd_tb_path}',
+        f'ghdl -a {vhd_path} {vhd_tb_path} {deps}',
+        f'ghdl -s {vhd_path} {vhd_tb_path} {deps}',
         f'ghdl -e {name}_tb',
         f'ghdl -r {name}_tb --vcd={name}_tb.vcd --stop-time={STOP_TIME}ns',
         f'gtkwave {name}_tb.vcd'
@@ -54,13 +60,14 @@ def get_sim_command(name):
     return ' && '.join(cmds)
 
 
-run = os.system
+run =  os.system
 
 parser = argparse.ArgumentParser(description='Create a simple VHDL module.')
 parser.add_argument('--create', type=str,
                     help='create a new example following the suggested folder structure')
 parser.add_argument('--sim', type=str,
                     help='run a ghdl + gtk wave for a given example')
+
 parser.add_argument('--testbench', type=str,
                     help='run a ghdl + gtk wave for a given example')
 
