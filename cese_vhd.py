@@ -5,6 +5,21 @@ import os
 # ******************************************************************************************************************** #
 #                                                  Testbench Template                                                  #
 # ******************************************************************************************************************** #
+MODULE_TEMPLATE = '''library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity {0} is
+    port(
+        a_i: in std_logic;
+        b_o: out std_logic 
+    );
+end;
+
+architecture {0}_arch of {0} is
+    begin
+        b_o <= not a_i;
+    end;'''
+
 TESTBENCH_TEMPLATE = '''library IEEE;
 use IEEE.std_logic_1164.all;
 
@@ -76,6 +91,8 @@ if __name__ == '__main__':
     args = parser.parse_args()
     if args.create:
         run(get_create_command(args.create))
+        with open(f'./{args.create}/src/{args.create}.vhd', 'w+') as f:
+            f.write(MODULE_TEMPLATE.format(args.create))
     if args.sim:
         run(get_sim_command(args.sim))
     if args.testbench:
