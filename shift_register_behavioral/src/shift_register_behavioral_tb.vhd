@@ -1,12 +1,12 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity shift_register_tb is
+entity shift_register_behavioral_tb is
 end;
 
-architecture shift_register_tb_arch of shift_register_tb is
+architecture shift_register_behavioral_tb_arch of shift_register_behavioral_tb is
     -- Component Declaration --
-    component shift_register is
+    component shift_register_behavioral is
         port(
             e: in std_logic;
             clk: in std_logic;
@@ -26,7 +26,7 @@ begin
 
     -- Sequence Goes Here --
 
-    DUT: shift_register
+    DUT: shift_register_behavioral
         port map(
             e => e_tb,
             clk => clk_tb,
@@ -39,9 +39,9 @@ begin
             wait for 20 ns;
             e_tb <= '0';        
             wait for 60 ns;
-            assert (s_tb = '1') report "Bit not shifted successfully" severity failure;
+            assert (s_tb = '1') report "Bit 1 not shifted successfully" severity failure;
             wait for 20 ns;
-            assert (s_tb = '0') report "Bit not shifted successfully" severity failure;
+            assert (s_tb = '0') report "Bit 0 not shifted successfully" severity failure;
             wait;
         end process;
 end;
