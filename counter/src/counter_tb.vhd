@@ -7,7 +7,7 @@ end;
 architecture counter_tb_arch of counter_tb is
     -- Component Declaration --
     component counter is
-        generic(N: natural:= 4);
+        generic(N: natural:= 5);
         port(
             ena: in std_logic;
             rst: in std_logic; 
@@ -20,7 +20,7 @@ architecture counter_tb_arch of counter_tb is
     signal ena_tb: std_logic := '1';
     signal rst_tb: std_logic := '0';
     signal clk_tb: std_logic := '0';
-    signal q_tb: std_logic_vector(3 downto 0) := "0000";
+    signal q_tb: std_logic_vector(4 downto 0) := (others => '0');
 
 begin
 
@@ -37,8 +37,8 @@ begin
     
     TEST: process
     begin
-        wait for 20*15 ns;
-        assert q_tb = "1111" report "Counter failed" severity failure;
+        wait for 20*31 ns;
+        assert q_tb = "11111" report "Counter failed" severity failure;
         wait;
     end process;
 end;
