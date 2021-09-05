@@ -7,7 +7,7 @@ entity ffd is
         en_i: in std_logic;
         clk_i: in std_logic;
         rst_i: in std_logic;
-        q_o: out std_logic 
+        q_o: out std_logic := '0'
     );
 end;
 

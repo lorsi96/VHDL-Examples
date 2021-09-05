@@ -22,9 +22,9 @@ architecture counter_arch of counter is
         );
     end component;
 
-    signal ff_wires: std_logic_vector(N downto 0);
-    signal aux2: std_logic_vector(N-1 downto 0);
-    signal aux3: std_logic_vector(N-1 downto 0);
+    signal ff_wires: std_logic_vector(N downto 0) := "00000";
+    signal aux2: std_logic_vector(N-1 downto 0) :=  "0000";
+    signal aux3: std_logic_vector(N-1 downto 0) :=  "0000";
 
     begin
         ff_wires(0) <= ena;

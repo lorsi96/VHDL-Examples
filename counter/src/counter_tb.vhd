@@ -38,7 +38,7 @@ begin
     TEST: process
     begin
         wait for 20*15 ns;
-        -- assert q_tb == '1111' report "Counter failed" severity failure;
+        assert q_tb = "1111" report "Counter failed" severity failure;
         wait;
     end process;
 end;
