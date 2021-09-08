@@ -1,6 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
+
 entity barrel_shifter_tb is
 end;
 
@@ -32,6 +33,11 @@ begin
     
     TEST: process
     begin
-    wait for 10 ns;
+        a_tb <= "0001";
+        des_tb <= "11";
+        wait for 20 ns;
+        a_tb <= "0011";
+        wait for 20 ns;
+        wait;
     end process;
 end;
