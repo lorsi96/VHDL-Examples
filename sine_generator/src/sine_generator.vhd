@@ -5,6 +5,7 @@ use IEEE.numeric_std.all;
 entity sine_generator is
     port(
       clk: in std_logic;
+      mul: in unsigned(3 downto 0);
       result: out std_logic_vector(7 downto 0)
     );
 end sine_generator;
@@ -17,7 +18,7 @@ begin
         if clk = '1' then
             -- Sine Cyclic Counter --
             -- Note: intentionally lets the counter overflow. --  
-            address := address + 1;
+            address := address + mul;
             
             -- Sine Memory Map --
             case address is
@@ -277,7 +278,7 @@ begin
                 when "11111101" => result <= "01111001";
                 when "11111110" => result <= "01111100";
                 when "11111111" => result <= "01111111";
-                when others => result <= (others => 'X');
+                when others => result <= (others => '0');
             end case;
           end if;
     end process;
