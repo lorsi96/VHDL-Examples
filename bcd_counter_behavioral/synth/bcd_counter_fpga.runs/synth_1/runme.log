@@ -1,0 +1,286 @@
+
+*** Running vivado
+    with args -log bcd_counter_behavioral_VIO.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source bcd_counter_behavioral_VIO.tcl
+
+
+****** Vivado v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source bcd_counter_behavioral_VIO.tcl -notrace
+Command: synth_design -top bcd_counter_behavioral_VIO -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 136655 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1277.066 ; gain = 83.000 ; free physical = 12418 ; free virtual = 19651
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'bcd_counter_behavioral_VIO' [/home/lorsi/FPGA/bcd_counter_behavioral/src/bcd_counter_behavioral_VIO.vhd:11]
+INFO: [Synth 8-3491] module 'vio_1' declared at '/home/lorsi/FPGA/bcd_counter_behavioral/synth/bcd_counter_fpga.runs/synth_1/.Xil/Vivado-136620-lorsi-ThinkPad-T490/realtime/vio_1_stub.vhdl:5' bound to instance 'your_instance_name' of component 'vio_1' [/home/lorsi/FPGA/bcd_counter_behavioral/src/bcd_counter_behavioral_VIO.vhd:37]
+INFO: [Synth 8-638] synthesizing module 'vio_1' [/home/lorsi/FPGA/bcd_counter_behavioral/synth/bcd_counter_fpga.runs/synth_1/.Xil/Vivado-136620-lorsi-ThinkPad-T490/realtime/vio_1_stub.vhdl:16]
+INFO: [Synth 8-3491] module 'bcd_counter_behavioral' declared at '/home/lorsi/FPGA/bcd_counter_behavioral/src/bcd_counter_behavioral.vhd:5' bound to instance 'inst' of component 'bcd_counter_behavioral' [/home/lorsi/FPGA/bcd_counter_behavioral/src/bcd_counter_behavioral_VIO.vhd:47]
+INFO: [Synth 8-638] synthesizing module 'bcd_counter_behavioral' [/home/lorsi/FPGA/bcd_counter_behavioral/src/bcd_counter_behavioral.vhd:14]
+WARNING: [Synth 8-614] signal 'en' is read in the process but is not in the sensitivity list [/home/lorsi/FPGA/bcd_counter_behavioral/src/bcd_counter_behavioral.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'bcd_counter_behavioral' (1#1) [/home/lorsi/FPGA/bcd_counter_behavioral/src/bcd_counter_behavioral.vhd:14]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'inst'. This will prevent further optimization [/home/lorsi/FPGA/bcd_counter_behavioral/src/bcd_counter_behavioral_VIO.vhd:47]
+INFO: [Synth 8-256] done synthesizing module 'bcd_counter_behavioral_VIO' (2#1) [/home/lorsi/FPGA/bcd_counter_behavioral/src/bcd_counter_behavioral_VIO.vhd:11]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1321.676 ; gain = 127.609 ; free physical = 12429 ; free virtual = 19663
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1321.676 ; gain = 127.609 ; free physical = 12430 ; free virtual = 19663
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1321.676 ; gain = 127.609 ; free physical = 12430 ; free virtual = 19663
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/lorsi/FPGA/bcd_counter_behavioral/synth/bcd_counter_fpga.srcs/sources_1/ip/vio_1/vio_1/vio_1_in_context.xdc] for cell 'your_instance_name'
+Finished Parsing XDC File [/home/lorsi/FPGA/bcd_counter_behavioral/synth/bcd_counter_fpga.srcs/sources_1/ip/vio_1/vio_1/vio_1_in_context.xdc] for cell 'your_instance_name'
+Parsing XDC File [/home/lorsi/FPGA/bcd_counter_behavioral/src/Arty-Z7-10-Master.xdc]
+Finished Parsing XDC File [/home/lorsi/FPGA/bcd_counter_behavioral/src/Arty-Z7-10-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/lorsi/FPGA/bcd_counter_behavioral/src/Arty-Z7-10-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/bcd_counter_behavioral_VIO_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/bcd_counter_behavioral_VIO_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1634.234 ; gain = 0.000 ; free physical = 12091 ; free virtual = 19378
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:33 . Memory (MB): peak = 1634.234 ; gain = 440.168 ; free physical = 12165 ; free virtual = 19463
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:33 . Memory (MB): peak = 1634.234 ; gain = 440.168 ; free physical = 12164 ; free virtual = 19463
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for your_instance_name. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:33 . Memory (MB): peak = 1634.234 ; gain = 440.168 ; free physical = 12166 ; free virtual = 19465
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'cnt_reg' [/home/lorsi/FPGA/bcd_counter_behavioral/src/bcd_counter_behavioral.vhd:22]
+WARNING: [Synth 8-327] inferring latch for variable 'c_o_reg' [/home/lorsi/FPGA/bcd_counter_behavioral/src/bcd_counter_behavioral.vhd:20]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:33 . Memory (MB): peak = 1634.234 ; gain = 440.168 ; free physical = 12157 ; free virtual = 19456
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module bcd_counter_behavioral 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:33 . Memory (MB): peak = 1634.234 ; gain = 440.168 ; free physical = 12146 ; free virtual = 19444
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1634.234 ; gain = 440.168 ; free physical = 12086 ; free virtual = 19365
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1634.234 ; gain = 440.168 ; free physical = 12087 ; free virtual = 19366
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1634.234 ; gain = 440.168 ; free physical = 12088 ; free virtual = 19367
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-5396] Clock pin G has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/lorsi/FPGA/bcd_counter_behavioral/src/bcd_counter_behavioral.vhd:20]
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1634.234 ; gain = 440.168 ; free physical = 12087 ; free virtual = 19366
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1634.234 ; gain = 440.168 ; free physical = 12087 ; free virtual = 19366
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1634.234 ; gain = 440.168 ; free physical = 12087 ; free virtual = 19366
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1634.234 ; gain = 440.168 ; free physical = 12086 ; free virtual = 19366
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1634.234 ; gain = 440.168 ; free physical = 12087 ; free virtual = 19366
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1634.234 ; gain = 440.168 ; free physical = 12087 ; free virtual = 19366
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |vio_1         |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+-------------+------+
+|      |Cell         |Count |
++------+-------------+------+
+|1     |vio_1_bbox_0 |     1|
+|2     |LUT1         |     1|
+|3     |LUT2         |     1|
+|4     |LUT3         |     1|
+|5     |LUT4         |     2|
+|6     |LUT5         |     1|
+|7     |LD           |     5|
+|8     |IBUF         |     1|
++------+-------------+------+
+
+Report Instance Areas: 
++------+---------+-----------------------+------+
+|      |Instance |Module                 |Cells |
++------+---------+-----------------------+------+
+|1     |top      |                       |    14|
+|2     |  inst   |bcd_counter_behavioral |    11|
++------+---------+-----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:41 . Memory (MB): peak = 1634.234 ; gain = 440.168 ; free physical = 12087 ; free virtual = 19366
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1634.234 ; gain = 127.609 ; free physical = 12142 ; free virtual = 19422
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:41 . Memory (MB): peak = 1634.234 ; gain = 440.168 ; free physical = 12142 ; free virtual = 19422
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 5 instances were transformed.
+  LD => LDCE: 5 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+20 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:43 . Memory (MB): peak = 1655.234 ; gain = 480.625 ; free physical = 12159 ; free virtual = 19417
+INFO: [Common 17-1381] The checkpoint '/home/lorsi/FPGA/bcd_counter_behavioral/synth/bcd_counter_fpga.runs/synth_1/bcd_counter_behavioral_VIO.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file bcd_counter_behavioral_VIO_utilization_synth.rpt -pb bcd_counter_behavioral_VIO_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.09 . Memory (MB): peak = 1679.246 ; gain = 0.000 ; free physical = 12157 ; free virtual = 19415
+INFO: [Common 17-206] Exiting Vivado at Sun Sep 12 19:54:42 2021...

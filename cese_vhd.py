@@ -49,7 +49,7 @@ end;'''
 
 
 
-STOP_TIME = 1000  # Nanoseconds.
+STOP_TIME = 10000  # Nanoseconds.
 
 def get_deps(name):
     with open(f'./{name}/{name}.deps') as f:
@@ -61,6 +61,7 @@ def get_create_command(name):
 
 def get_sim_command(name):
     deps = get_deps(name)
+    deps += '/home/lorsi/FPGA/sine_generator/src/sin_clk_gen.vhd'
     sim_path = os.path.join(name, 'sim')
     vhd_path = os.path.join('..', 'src', name + '.vhd')
     vhd_tb_path = os.path.join('..', 'src', name + '_tb.vhd')

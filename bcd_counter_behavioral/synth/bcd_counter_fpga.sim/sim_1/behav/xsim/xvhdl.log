@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lorsi/FPGA/bcd_counter_behavioral/src/bcd_counter_behavioral.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity bcd_counter_behavioral
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/lorsi/FPGA/bcd_counter_behavioral/src/bcd_counter_behavioral_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity bcd_counter_behavioral_tb

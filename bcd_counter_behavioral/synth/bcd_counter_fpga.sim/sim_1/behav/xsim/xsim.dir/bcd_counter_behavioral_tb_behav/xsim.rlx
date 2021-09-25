@@ -1,0 +1,12 @@
+
+{ 
+    crc :  8562405875652273798  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto d2dc467f674a4eb081e6db2b476a2df5 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot bcd_counter_behavioral_tb_behav xil_defaultlib.bcd_counter_behavioral_tb" , 
+    buildDate : "Apr  4 2018" , 
+    buildTime : "18:43:17" , 
+    linkCmd : "/usr/bin/gcc -Wa,-W  -O -fPIC  -m64  -Wl,--unresolved-symbols=ignore-all  -o \"xsim.dir/bcd_counter_behavioral_tb_behav/xsimk\"   \"xsim.dir/bcd_counter_behavioral_tb_behav/obj/xsim_0.lnx64.o\" \"xsim.dir/bcd_counter_behavioral_tb_behav/obj/xsim_1.lnx64.o\" \"/opt/Xilinx/Vivado/2018.1/lib/lnx64.o/librdi_simulator_kernel.so\"  \"/opt/Xilinx/Vivado/2018.1/lib/lnx64.o/librdi_simbridge_kernel.so\"" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 
