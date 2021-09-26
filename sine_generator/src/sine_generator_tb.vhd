@@ -49,7 +49,7 @@ architecture sine_generator_tb_arch of sine_generator_tb is
 
     -- Signals --
     signal clk_tb: std_logic := '0';
-    signal mul_tb: unsigned(3 downto 0) := "0001";
+    signal mul_tb: unsigned(3 downto 0) := "0010";
     -- signal rst_tb: std_logic := '0';
     -- signal clk_out_bt: std_logic;
     signal result_tb: std_logic;

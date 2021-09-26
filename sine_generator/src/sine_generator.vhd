@@ -11,35 +11,39 @@ entity sine_generator is
 end sine_generator;
 
 architecture sine_generator_arch of sine_generator is
-    signal count_ref: unsigned(7 downto 0) := "00000000";
-begin
-    process(clk) is
-        variable address: unsigned(7 downto 0) := "00000000";
-        variable counter: unsigned(8 downto 0) := "000000000";
-        variable res_tmp: std_logic := '0';
+    constant N_BITS: natural := 7;
 
+    constant PWM_COUNTER_MAX: unsigned(N_BITS downto 0) := (N_BITS downto 0 => '1');
+    constant PWM_COUNTER_MIN: unsigned(N_BITS downto 0) := (N_BITS downto 0 => '0');
+
+    component pwm is
+        generic(PWM_N_BITS: natural := 8);
+        port(
+            pwm_clk: in std_logic;
+            pwm_cmp: in unsigned(PWM_N_BITS-1 downto 0);
+            pwm_out: out std_logic;
+            pwm_end: out std_logic
+        );
+    end component;
+
+    signal count_ref: unsigned(N_BITS downto 0) := "00000000";
+    signal new_sample_req: std_logic := '0';
+begin
+    
+    SIN_PWM: pwm port map(
+        pwm_clk => clk,
+        pwm_cmp => count_ref,
+        pwm_out => result,
+        pwm_end => new_sample_req
+    );
+
+    process(clk) is
+        variable address: unsigned(N_BITS downto 0) := "00000000";
     begin
         if clk = '1' then
-            -- Sine Cyclic Counter --   
-            if counter = count_ref then
-                if counter = "11111111" then
-                    res_tmp := '1';
-                else
-                    res_tmp := '0';
-                end if;
-            end if;            
-            
-            result <= res_tmp;
 
-            counter := counter + 1;
-            if counter = "100000000" then
-                counter := "000000000";
+            if new_sample_req = '1' then
                 address := address + mul;
-                if count_ref = "00000000" then
-                    res_tmp := '0';
-                else
-                    res_tmp := '1';
-                end if;
             end if;
 
             -- Sine Memory Map --
