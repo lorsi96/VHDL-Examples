@@ -49,7 +49,7 @@ end;'''
 
 
 
-STOP_TIME = 10000  # Nanoseconds.
+STOP_TIME = 20000000  # Nanoseconds.
 
 def get_deps(name):
     with open(f'./{name}/{name}.deps') as f:

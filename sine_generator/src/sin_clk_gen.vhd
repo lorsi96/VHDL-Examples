@@ -10,6 +10,7 @@ use IEEE.numeric_std.all;
 entity clk_gen is
 	generic(
 		SIN_SAMPLES_N: natural := 256;
+		SIN_LEVELS: natural := 256;
 		BASE_SIN_FREQ_HZ: natural := 100;
 		CLOCK_RATE: natural := 50E6
 	);
@@ -38,7 +39,7 @@ architecture clk_gen_arch of clk_gen is
 	end function;
 	
 	-- Frequecy to fit all of the sine samples within a period.
-	constant SAMPLE_RATE_HZ: natural := BASE_SIN_FREQ_HZ * SIN_SAMPLES_N;
+	constant SAMPLE_RATE_HZ: natural := BASE_SIN_FREQ_HZ * SIN_SAMPLES_N * SIN_LEVELS;
 	constant DIVIDER: natural := (CLOCK_RATE+SAMPLE_RATE_HZ/2) / SAMPLE_RATE_HZ;
 	constant OVERSAMPLE_VALUE: integer := DIVIDER - 1;
 

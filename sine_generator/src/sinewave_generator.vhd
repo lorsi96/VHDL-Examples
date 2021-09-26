@@ -18,7 +18,7 @@ entity sinewave_generator is
         -- Output Sine Freq = mul * BASE_SIN_FREQ_HZ --
         mul: in unsigned(3 downto 0);
         -- 8 bit sinewave output --
-        result: out std_logic_vector(7 downto 0)
+        result: out std_logic
     );
 end;
 
@@ -28,7 +28,7 @@ architecture sinewave_generator_arch of sinewave_generator  is
         port(
           clk: in std_logic;
           mul: in unsigned(3 downto 0);
-          result: out std_logic_vector(7 downto 0)
+          result: out std_logic
         );
     end component;
 
@@ -36,6 +36,7 @@ architecture sinewave_generator_arch of sinewave_generator  is
       generic(
         SIN_SAMPLES_N: natural := 256;
         BASE_SIN_FREQ_HZ: natural := BASE_SIN_FREQ_HZ;
+        SIN_LEVELS: natural := 256;
         CLOCK_RATE: natural := CLOCK_RATE
       );
       port(

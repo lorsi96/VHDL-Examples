@@ -32,9 +32,9 @@ architecture sine_generator_tb_arch of sine_generator_tb is
       -- Generic Configuration --
       generic(
           -- Output Sine Base (min) Frequency --
-          BASE_SIN_FREQ_HZ: natural := 1;
+          BASE_SIN_FREQ_HZ: natural := 100;
           -- Input Frequency Clk Speed --
-          CLOCK_RATE: natural := 512 
+          CLOCK_RATE: natural := 50e6 
       );
       -- Port Declaration --
       port(
@@ -43,16 +43,16 @@ architecture sine_generator_tb_arch of sine_generator_tb is
           -- Output Sine Freq = mul * BASE_SIN_FREQ_HZ --
           mul: in unsigned(3 downto 0);
           -- 8 bit sinewave output --
-          result: out std_logic_vector(7 downto 0)
+          result: out std_logic
       );
     end component;
 
     -- Signals --
     signal clk_tb: std_logic := '0';
-    signal mul_tb: unsigned(3 downto 0) := "0100";
+    signal mul_tb: unsigned(3 downto 0) := "0001";
     -- signal rst_tb: std_logic := '0';
     -- signal clk_out_bt: std_logic;
-    signal result_tb: std_logic_vector(7 downto 0);
+    signal result_tb: std_logic;
 
 begin
     SINEWAVE_GEN : sinewave_generator 
