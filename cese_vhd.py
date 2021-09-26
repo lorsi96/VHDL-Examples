@@ -62,7 +62,7 @@ def get_create_command(name):
 def get_sim_command(name):
     deps = get_deps(name)
     deps += '/home/lorsi/FPGA/sine_generator/src/sin_clk_gen.vhd '
-    deps += '/home/lorsi/FPGA/sine_generator/src/sinewave_generator.vhd '
+    deps += '/home/lorsi/FPGA/sine_generator/src/sine_table.vhd '
     deps += '/home/lorsi/FPGA/sine_generator/src/pwm.vhd '
     deps += '/home/lorsi/FPGA/sine_generator/src/buttons.vhd '
     sim_path = os.path.join(name, 'sim')
