@@ -15,9 +15,9 @@ end;
 architecture pwm_arch of pwm is
     constant PWM_COUNTER_MAX: unsigned(PWM_N_BITS-1 downto 0) := (others => '1');
     constant PWM_COUNTER_MIN: unsigned(PWM_N_BITS-1 downto 0) := (others => '0');
-    begin
-        process(pwm_clk) is
-            variable counter: unsigned(PWM_N_BITS-1 downto 0) := PWM_COUNTER_MIN; 
+begin
+    process(pwm_clk) is
+        variable counter: unsigned(PWM_N_BITS-1 downto 0) := PWM_COUNTER_MIN; 
     begin
         if (pwm_clk) = '1' then
             pwm_end <= '0';

@@ -65,6 +65,7 @@ def get_sim_command(name):
     deps += '/home/lorsi/FPGA/sine_generator/src/sine_table.vhd '
     deps += '/home/lorsi/FPGA/sine_generator/src/pwm.vhd '
     deps += '/home/lorsi/FPGA/sine_generator/src/buttons.vhd '
+    deps += '/home/lorsi/FPGA/sine_generator/src/sine_gen_top.vhd '
     sim_path = os.path.join(name, 'sim')
     vhd_path = os.path.join('..', 'src', name + '.vhd')
     vhd_tb_path = os.path.join('..', 'src', name + '_tb.vhd')
