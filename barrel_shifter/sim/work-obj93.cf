@@ -1,7 +1,0 @@
-v 4
-file . "../src/barrel_shifter.vhd" "7d5550c1f34ec793a932993192a615934a09d6e8" "20210908020854.932":
-  entity barrel_shifter at 1( 0) + 0 on 111;
-  architecture barrel_shifter_arch of barrel_shifter at 13( 267) + 0 on 112;
-file . "../src/barrel_shifter_tb.vhd" "5957c67f646d2b0aa74b728fbff0571b53229714" "20210908020854.932":
-  entity barrel_shifter_tb at 1( 0) + 0 on 113;
-  architecture barrel_shifter_tb_arch of barrel_shifter_tb at 8( 79) + 0 on 114;

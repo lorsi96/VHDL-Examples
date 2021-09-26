@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../../src/bcd_counter_behavioral.vhd" \
-"../../../../../src/bcd_counter_behavioral_tb.vhd" \
-
-# Do not sort compile order
-nosort
